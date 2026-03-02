@@ -283,8 +283,10 @@ function submitForm(){
   var formData = new FormData();
   Object.keys(data).forEach(function(key){ formData.append(key, data[key]); });
 
+  setTimeout(function(){ goTo('thanks'); }, 3000);
   fetch(SHEET_URL, {
     method: 'POST',
+    mode: 'no-cors',
     body: formData
   }).then(function(){ goTo('thanks'); }).catch(function(){ goTo('thanks'); });
 }

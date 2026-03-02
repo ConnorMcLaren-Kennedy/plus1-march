@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Virgin Active Sheffield — Plus 1 March Offer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#f7f7f7;color:#1a1a1a;-webkit-font-smoothing:antialiased}
+.page{display:none;min-height:100vh}
+.page.active{display:block}
+.header{position:relative;overflow:hidden;padding:40px 24px 32px;text-align:center;background:#fff;border-bottom:1px solid #eee}
+.stripe1{position:absolute;top:-30px;right:-40px;width:160px;height:320px;background:rgba(228,24,30,0.04);transform:rotate(-8deg)}
+.stripe2{position:absolute;bottom:-20px;left:-30px;width:120px;height:260px;background:rgba(228,24,30,0.03);transform:rotate(-8deg)}
+.badge{display:inline-block;background:#E4181E;color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.wrap{max-width:500px;margin:0 auto;padding:24px 20px 40px}
+.card{background:#fff;border-radius:14px;padding:24px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.card-title{font-size:15px;font-weight:700;margin-bottom:14px}
+.card-sub{color:#999;font-size:13px;margin-bottom:16px;margin-top:-8px}
+.age-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.age-btn{padding:14px 24px;border-radius:10px;border:2px solid #e0e0e0;background:#fff;color:#555;font-size:16px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.age-btn.on{border-color:#E4181E;background:#E4181E;color:#fff;font-weight:700;box-shadow:0 2px 12px rgba(228,24,30,0.25)}
+.radio-stack{display:flex;flex-direction:column;gap:10px}
+.radio-btn{padding:14px 18px;border-radius:10px;width:100%;text-align:left;border:2px solid #e8e8e8;background:#fff;color:#666;font-size:14px;font-weight:400;cursor:pointer;transition:all .15s;font-family:inherit;display:flex;align-items:center;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.radio-btn.on{border-color:#E4181E;background:rgba(228,24,30,0.05);color:#1a1a1a;font-weight:600;box-shadow:0 2px 8px rgba(228,24,30,0.1)}
+.radio-dot{width:20px;height:20px;border-radius:50%;flex-shrink:0;border:2px solid #ccc;background:#fff;transition:all .15s}
+.radio-btn.on .radio-dot{border:6px solid #E4181E}
+.crossed{text-align:center;margin-bottom:20px;padding:18px;background:#fff;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.crossed-amount{color:#999;font-size:28px;font-weight:700;text-decoration:line-through;text-decoration-color:#E4181E;text-decoration-thickness:2px}
+.price-card{background:#fff;border:2px solid #E4181E;border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(228,24,30,0.1)}
+.price-tag{position:absolute;top:0;right:0;background:#E4181E;color:#fff;font-size:11px;font-weight:700;padding:6px 16px;border-radius:0 14px 0 12px;letter-spacing:1px;text-transform:uppercase}
+.price-big{color:#E4181E;font-size:56px;font-weight:800;line-height:1}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding-top:18px;border-top:1px solid #eee;margin-top:16px}
+.save-amount{color:#16a34a;font-size:22px;font-weight:800}
+.breakdown{background:#fff;border-radius:14px;padding:20px 24px;margin-top:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.bd-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0}
+.bd-row:last-child{border-bottom:none}
+.bd-val{color:#16a34a;font-size:14px;font-weight:600}
+.big-save{margin-top:20px;text-align:center;padding:32px 24px;background:linear-gradient(135deg,#fff 0%,#fef2f2 100%);border-radius:16px;border:1px solid rgba(228,24,30,0.12);box-shadow:0 2px 12px rgba(228,24,30,0.06)}
+.big-save-num{color:#16a34a;font-size:clamp(48px,12vw,72px);font-weight:800;line-height:1;letter-spacing:-1px}
+.how-box{background:#fff;border:1px solid #eee;border-radius:14px;padding:22px 24px;margin-top:18px;font-size:14px;color:#666;line-height:1.7;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+.red-btn{display:block;width:100%;max-width:360px;margin:0 auto;background:#E4181E;color:#fff;border:none;border-radius:12px;padding:18px 48px;font-size:16px;font-weight:700;cursor:pointer;letter-spacing:.5px;box-shadow:0 4px 20px rgba(228,24,30,0.25);font-family:inherit;transition:all .2s}
+.red-btn:disabled{background:#ddd;color:#aaa;box-shadow:none;cursor:default}
+.fine-print{margin-top:32px;padding-top:18px;border-top:1px solid #eee;color:#bbb;font-size:11px;line-height:1.7}
+.field-row{display:flex;flex-wrap:wrap;gap:14px}
+.field{flex:1 1 100%;min-width:0}
+.field.half{flex:1 1 45%;min-width:140px}
+.field label{display:block;font-size:12px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px}
+.field label .opt{font-weight:400;text-transform:none;letter-spacing:0;margin-left:6px;color:#bbb}
+.field input{width:100%;padding:14px 16px;border-radius:10px;border:2px solid #e8e8e8;background:#fff;font-size:15px;color:#1a1a1a;outline:none;transition:border .15s;font-family:inherit;box-sizing:border-box}
+.field input:focus{border-color:#E4181E}
+.email-link{color:#E4181E;text-decoration:none;font-weight:600}
+.check-circle{width:64px;height:64px;border-radius:50%;background:#E4181E;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 4px 20px rgba(228,24,30,0.2)}
+#results{display:none}
+</style>
+</head>
+<body>
+
+<!-- ========== PAGE 1: CALCULATOR ========== -->
+<div id="page-calc" class="page active">
+  <div class="header">
+    <div class="stripe1"></div><div class="stripe2"></div>
+    <div class="badge">Sheffield &middot; March 2025</div>
+    <h1 style="font-size:clamp(26px,6vw,40px);font-weight:800;line-height:1.1;margin-bottom:12px;letter-spacing:-.5px">
+      YOUR FRIEND'S<br><span style="color:#E4181E">GOT YOU A DEAL</span>
+    </h1>
+    <p style="color:#888;font-size:15px;line-height:1.6;max-width:420px;margin:0 auto">
+      Join as their Plus 1 this March and get 30% off, a free month, and no joining fee. Pick your details to see your price.
+    </p>
+  </div>
+  <div class="wrap">
+    <div class="card">
+      <div class="card-title">How old are you?</div>
+      <div class="age-grid">
+        <button class="age-btn" data-age="18-25" onclick="pickAge(this)">18-25</button>
+        <button class="age-btn" data-age="26-64" onclick="pickAge(this)">26-64</button>
+        <button class="age-btn" data-age="65+" onclick="pickAge(this)">65+</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:6px">What about the friend who referred you?</div>
+      <div class="card-sub">Their discount gets passed to you, then you get 30% off on top.</div>
+      <div class="radio-stack">
+        <button class="radio-btn" data-friend="nhs" onclick="pickFriend(this)"><div class="radio-dot"></div><span>They work in the NHS, Bluelight, or teaching</span></button>
+        <button class="radio-btn" data-friend="corporate" onclick="pickFriend(this)"><div class="radio-dot"></div><span>They have a corporate membership</span></button>
+        <button class="radio-btn" data-friend="neither" onclick="pickFriend(this)"><div class="radio-dot"></div><span>Neither / not sure</span></button>
+      </div>
+    </div>
+
+    <div id="results">
+      <div class="crossed">
+        <div style="color:#999;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px">Joining on your own would cost</div>
+        <span class="crossed-amount" id="r-normal"></span>
+        <span style="color:#999;font-size:14px;margin-left:8px">/year</span>
+        <div style="color:#bbb;font-size:13px;margin-top:4px" id="r-normal-detail"></div>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tag">Plus 1 price</div>
+        <div style="color:#999;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:14px">Your monthly rate</div>
+        <div style="display:flex;align-items:baseline;gap:4px;margin-bottom:6px">
+          <span class="price-big" id="r-monthly"></span>
+          <span style="color:#999;font-size:16px">/mo</span>
+        </div>
+        <div style="color:#888;font-size:13px;margin-bottom:18px" id="r-explain"></div>
+        <div class="price-row">
+          <div>
+            <div style="color:#bbb;font-size:11px;text-transform:uppercase;letter-spacing:1px">Year 1 total</div>
+            <div style="color:#1a1a1a;font-size:20px;font-weight:700" id="r-year"></div>
+          </div>
+          <div style="text-align:right">
+            <div style="color:#bbb;font-size:11px;text-transform:uppercase;letter-spacing:1px">You save</div>
+            <div class="save-amount" id="r-save"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="breakdown" id="r-breakdown"></div>
+
+      <div class="big-save">
+        <div style="color:#999;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:8px">Your total year 1 saving</div>
+        <div class="big-save-num" id="r-bigsave"></div>
+        <div style="color:#aaa;font-size:14px;margin-top:8px">vs joining on your own at full price</div>
+      </div>
+
+      <div class="how-box">
+        <div style="color:#1a1a1a;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px">How it works</div>
+        <div style="margin-bottom:10px">Your friend adds you to their membership as a Plus 1. They pay for your membership through their account, and you both get full access to the club.</div>
+        <div style="margin-bottom:10px">Got kids? Junior memberships can be added on the same deal too, with 30% off and a free month.</div>
+        <div>All they need to do is mention you when they come in, and we'll get you both set up.</div>
+      </div>
+
+      <div style="margin-top:24px;text-align:center">
+        <button class="red-btn" onclick="goTo('details')">I'M INTERESTED</button>
+        <div style="color:#aaa;font-size:13px;margin-top:12px">Offer ends 31st March 2025</div>
+      </div>
+
+      <div class="fine-print">
+        <p>12-month membership only. Prices shown are for Virgin Active Sheffield. 1 month free means no charge in month 1, with 11 paying months from month 2. Plus 1 membership must be paid for by the primary member and linked to their account. 30% Plus 1 discount applied retrospectively. Corporate, NHS, Bluelight, and teacher discounts require valid proof. One adult Plus 1 per primary member. Junior Plus 1 memberships also receive 30% off and 1 month free. Offer runs 1–31 March 2025.</p>
+      </div>
+    </div>
+
+    <div id="empty-state" style="text-align:center;padding:40px 20px;color:#bbb;font-size:14px">
+      Pick your age and your friend's situation to see your price
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 2: DETAILS ========== -->
+<div id="page-details" class="page">
+  <div class="header">
+    <div class="stripe1"></div><div class="stripe2"></div>
+    <div class="badge">Sheffield &middot; March 2025</div>
+    <p style="color:#555;font-size:16px;line-height:1.6;max-width:400px;margin:0 auto">
+      Fill out your details below and Connor will be in touch.
+    </p>
+  </div>
+  <div class="wrap">
+    <div class="card">
+      <div class="card-title" style="margin-bottom:4px">About the friend who referred you</div>
+      <div style="color:#999;font-size:13px;margin-bottom:18px">So we can find them on our system and link you up.</div>
+      <div class="field-row">
+        <div class="field half"><label>Their first name</label><input type="text" id="f-ref-first" placeholder="e.g. Sarah"></div>
+        <div class="field half"><label>Their surname</label><input type="text" id="f-ref-last" placeholder="e.g. Jones"></div>
+        <div class="field"><label>Their date of birth <span class="opt">(optional — helps if they have a common name)</span></label><input type="date" id="f-ref-dob"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="margin-bottom:4px">Your details</div>
+      <div style="color:#999;font-size:13px;margin-bottom:18px">We'll use these to get in touch and get you started.</div>
+      <div class="field-row">
+        <div class="field half"><label>First name</label><input type="text" id="f-first" placeholder="e.g. Alex"></div>
+        <div class="field half"><label>Surname</label><input type="text" id="f-last" placeholder="e.g. Smith"></div>
+        <div class="field"><label>Phone number</label><input type="tel" id="f-phone" placeholder="e.g. 07700 900000"></div>
+        <div class="field"><label>Email</label><input type="email" id="f-email" placeholder="e.g. alex@email.com"></div>
+        <div class="field"><label>Date of birth</label><input type="date" id="f-dob"></div>
+      </div>
+    </div>
+    <button class="red-btn" id="submit-btn" disabled onclick="submitForm()">SUBMIT</button>
+    <div style="margin-top:24px;text-align:center">
+      <div style="color:#888;font-size:13px;line-height:1.6;margin-bottom:16px">
+        Any questions? Email Connor at <a class="email-link" href="mailto:connor.mclarenkennedy@virginactive.co.uk">connor.mclarenkennedy@virginactive.co.uk</a>
+      </div>
+      <div style="color:#bbb;font-size:11px;line-height:1.7">By submitting, you agree to Virgin Active contacting you about this offer.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== PAGE 3: THANK YOU ========== -->
+<div id="page-thanks" class="page">
+  <div class="header">
+    <div class="stripe1"></div><div class="stripe2"></div>
+    <div class="badge">Sheffield &middot; March 2025</div>
+  </div>
+  <div style="max-width:500px;margin:0 auto;padding:60px 24px;text-align:center">
+    <div class="check-circle">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1 style="font-size:28px;font-weight:800;margin-bottom:12px;letter-spacing:-.3px">YOU'RE ALL SET</h1>
+    <p style="color:#666;font-size:15px;line-height:1.7;margin:0 auto 32px;max-width:380px">
+      Thanks for submitting your details. Connor will be in touch shortly to get you and your friend set up.
+    </p>
+    <div class="card" style="display:inline-block;margin-bottom:0">
+      <div style="color:#888;font-size:13px;line-height:1.6">
+        Any questions in the meantime? Drop Connor an email at <a class="email-link" href="mailto:connor.mclarenkennedy@virginactive.co.uk">connor.mclarenkennedy@virginactive.co.uk</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== CONFIG =====
+// PASTE YOUR GOOGLE APPS SCRIPT URL HERE:
+var SHEET_URL = "";
+
+// ===== PRICING =====
+var RATES = {"18-25":85,"26-64":100,"65+":85};
+var FRIEND_RATES = {neither:9999, corporate:90, nhs:80};
+var JF=50, PD=0.3, MN=12, MM=11;
+var selectedAge=null, selectedFriend=null;
+
+function pickAge(btn){
+  selectedAge = btn.dataset.age;
+  document.querySelectorAll('.age-btn').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  updateCalc();
+}
+function pickFriend(btn){
+  selectedFriend = btn.dataset.friend;
+  document.querySelectorAll('.radio-btn').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  updateCalc();
+}
+function updateCalc(){
+  if(!selectedAge || !selectedFriend) return;
+  var own = RATES[selectedAge];
+  var fr = FRIEND_RATES[selectedFriend];
+  var base = Math.min(own, fr);
+  var p1Mo = Math.round(base*(1-PD)*100)/100;
+  var normalYear = own*MN+JF;
+  var p1Year = p1Mo*MM;
+  var saving = normalYear - p1Year;
+  var matched = fr < own;
+  var friendRate = Math.min(fr, own);
+  var p = "\u00A3";
+
+  document.getElementById('r-normal').textContent = p + normalYear.toLocaleString();
+  document.getElementById('r-normal-detail').textContent = p + own + "/mo x 12 months + " + p + JF + " join fee";
+  document.getElementById('r-monthly').textContent = p + (p1Mo%1===0 ? p1Mo : p1Mo.toFixed(2));
+  document.getElementById('r-explain').textContent = matched
+    ? "Matched to your friend\u2019s " + p + friendRate + "/mo rate, then 30% off"
+    : "30% off the " + p + own + "/mo " + (selectedAge==="26-64"?"adult":selectedAge) + " rate";
+  document.getElementById('r-year').textContent = p + p1Year.toLocaleString("en-GB",{maximumFractionDigits:2});
+  document.getElementById('r-save').textContent = p + saving.toLocaleString("en-GB",{maximumFractionDigits:2});
+  document.getElementById('r-bigsave').textContent = p + saving.toLocaleString("en-GB",{maximumFractionDigits:2});
+
+  var bdHTML = '<div style="color:#bbb;font-size:11px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:14px">How your savings break down</div>';
+  var rows = [
+    [p+"0 join fee (normally "+p+"50)", "-"+p+"50"],
+    ["1 month free", "-"+p+(p1Mo%1===0?p1Mo:p1Mo.toFixed(2))]
+  ];
+  if(matched) rows.push(["Price matched to friend\u2019s rate x 11 months", "-"+p+((own-friendRate)*MM).toFixed(0)]);
+  rows.push(["30% Plus 1 discount x 11 months", "-"+p+(base*PD*MM).toFixed(0)]);
+  rows.forEach(function(r,i){
+    bdHTML += '<div class="bd-row" style="'+(i===rows.length-1?'border-bottom:none':'')+'"><span style="color:#666;font-size:14px">'+r[0]+'</span><span class="bd-val">'+r[1]+'</span></div>';
+  });
+  document.getElementById('r-breakdown').innerHTML = bdHTML;
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('empty-state').style.display = 'none';
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ===== NAVIGATION =====
+function goTo(page){
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});
+  document.getElementById('page-'+page).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ===== FORM VALIDATION =====
+var requiredFields = ['f-ref-first','f-ref-last','f-first','f-last','f-phone','f-email','f-dob'];
+document.addEventListener('input', function(){
+  var ok = requiredFields.every(function(id){ return document.getElementById(id).value.trim() !== ''; });
+  document.getElementById('submit-btn').disabled = !ok;
+});
+
+// ===== FORM SUBMISSION =====
+function submitForm(){
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'SENDING...';
+
+  var data = {
+    referrer_first: document.getElementById('f-ref-first').value.trim(),
+    referrer_last: document.getElementById('f-ref-last').value.trim(),
+    referrer_dob: document.getElementById('f-ref-dob').value,
+    first_name: document.getElementById('f-first').value.trim(),
+    last_name: document.getElementById('f-last').value.trim(),
+    phone: document.getElementById('f-phone').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    dob: document.getElementById('f-dob').value,
+    submitted: new Date().toLocaleString('en-GB')
+  };
+
+  if(SHEET_URL){
+    fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(){ goTo('thanks'); }).catch(function(){ goTo('thanks'); });
+  } else {
+    console.log('Form data (no Sheet URL set):', data);
+    goTo('thanks');
+  }
+}
+</script>
+</body>
+</html>

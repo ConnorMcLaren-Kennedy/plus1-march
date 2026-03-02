@@ -170,7 +170,7 @@ body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#f7f7f7;
     <button class="red-btn" id="submit-btn" disabled onclick="submitForm()">SUBMIT</button>
     <div style="margin-top:24px;text-align:center">
       <div style="color:#888;font-size:13px;line-height:1.6;margin-bottom:16px">
-        Any questions? Email Connor at <a class="email-link" href="/cdn-cgi/l/email-protection#82e1edececedf0acefe1eee3f0e7ece9e7ecece7e6fbc2f4ebf0e5ebece3e1f6ebf4e7ace1edacf7e9"><span class="__cf_email__" data-cfemail="a0c3cfcececfd28ecdc3ccc1d2c5cecbc5cecec5c4d9e0d6c9d2c7c9cec1c3d4c9d6c58ec3cf8ed5cb">[email&#160;protected]</span></a>
+        Any questions? Email Connor at <a class="email-link" id="email-link-1" href="#"></a>
       </div>
       <div style="color:#bbb;font-size:11px;line-height:1.7">By submitting, you agree to Virgin Active contacting you about this offer.</div>
     </div>
@@ -193,13 +193,13 @@ body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#f7f7f7;
     </p>
     <div class="card" style="display:inline-block;margin-bottom:0">
       <div style="color:#888;font-size:13px;line-height:1.6">
-        Any questions in the meantime? Drop Connor an email at <a class="email-link" href="/cdn-cgi/l/email-protection#89eae6e7e7e6fba7e4eae5e8fbece7e2ece7e7ecedf0c9ffe0fbeee0e7e8eafde0ffeca7eae6a7fce2"><span class="__cf_email__" data-cfemail="d5b6babbbbbaa7fbb8b6b9b4a7b0bbbeb0bbbbb0b1ac95a3bca7b2bcbbb4b6a1bca3b0fbb6bafba0be">[email&#160;protected]</span></a>
+        Any questions in the meantime? Drop Connor an email at <a class="email-link" id="email-link-2" href="#"></a>
       </div>
     </div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 var SHEET_URL = "https://script.google.com/macros/s/AKfycbyPDAptExKWY0rSJBZQnPG22gyFOO9gqNskbTXCU3SY491kGgHxbmzYWUt1OZiVthZ7/exec";
 var RATES = {"18-25":85,"26-64":100,"65+":85};
 var FRIEND_RATES = {neither:9999, corporate:90, nhs:80};
@@ -288,6 +288,8 @@ function submitForm(){
     body: formData
   }).then(function(){ goTo('thanks'); }).catch(function(){ goTo('thanks'); });
 }
+(function(){var u='connor.mclaren-kennedy',d='virginactive.co.uk',e=u+'@'+d;
+['email-link-1','email-link-2'].forEach(function(id){var a=document.getElementById(id);if(a){a.href='mai'+'lto:'+e;a.textContent=e;}});})();
 </script>
 </body>
 </html>
